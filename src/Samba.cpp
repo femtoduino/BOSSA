@@ -146,7 +146,7 @@ Samba::init()
     }
     // Check for supported M0+ processor
     // NOTE: 0x1001000a is a ATSAMD21E18A
-	else if (cid == 0x10010000 || cid == 0x10010100 || cid == 0x10010005 || cid == 0x1001000a)
+	else if (cid == 0x10010000 || cid == 0x10010100 || cid == 0x10010005 || cid == 0x1001000a || cid == 0x1001000d)
     {
         return true;
     }
@@ -611,6 +611,8 @@ Samba::reset(void)
     {
     case ATSAMD21J18A_CHIPID:
     case ATSAMD21G18A_CHIPID:
+    case ATSAMD21E18A_CHIPID:
+    case ATSAMD21E15A_CHIPID:
         // http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0484c/index.html
         writeWord(0xE000ED0C, 0x05FA0004);
         break;
